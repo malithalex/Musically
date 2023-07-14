@@ -1,0 +1,866 @@
+<!doctype html>
+	<html lang="en">
+		<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>thumnail_description</title>
+        <style>
+          body {
+             font-family: Arial, Helvetica, sans-serif;
+             overflow:auto;
+             font-size:16px;
+            }
+
+          .topnav {
+             width:100%;
+             height:120px;
+             overflow: hidden;
+             background-color: #413C69;
+            }
+
+          .topnav a {
+             float: left;
+             color: #f2f2f2;
+             text-align: center;
+             padding: 14px 16px;
+             text-decoration: none;
+             font-size: 17px;
+            }
+
+          .topnav a:hover {
+             background-color: #ddd;
+             color: black;
+            }
+
+          .topnav a.active {
+             background-color: #F07B3F;
+             color: white;
+            }
+
+          #logo {
+             top:1%;
+             width:5%;
+             border-radius: 8px;
+             width : 10%;
+            }
+		  
+		  .dropbtn {
+             display:inline;
+             position: relative;
+             color: #cc7722;
+             width: 200px;
+             min-width: 200px;
+             font-size: 18px;
+             border:solid;
+             border-bottom-style:none;
+             border-color:white;
+             background-color:white;
+             padding:16px;
+             cursor:pointer;
+            }
+		  
+		  .dropdown {
+             display: inline-block;
+             position: relative;
+             left:65%;
+             top:8%;
+            }
+
+          .dropdown-content {
+             display: none;
+             position: absolute;
+             background-color: white;
+             width:200px;
+             min-width: 200px;
+             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+             z-index: 1;
+             text-align:center;
+             padding:3.5px;
+            }
+
+          .dropdown-content a {
+             color: black;
+             padding: 12px 16px;
+             text-decoration: none;
+             display: block;
+             cursor:pointer;
+            }
+
+
+
+          .dropdown-content a:hover {background-color:#A58463;}
+
+          .dropdown:hover .dropdown-content {display: block;}
+
+          .dropdown:hover .dropbtn {border-color: #D2691E; color:black;}
+
+
+          .h1{
+             color:#660033;
+             text-shadow: 2px 2px 10px #660033;
+             transition:transition 0.5s;
+            }
+          .h2{
+             color:#A58463;
+             text-shadow: 5px 5px 10px #A58463;
+             transition:transition 1s;
+            }
+          .h3{
+             color:#CD9D6F;
+             text-shadow: 2px 2px 14px #CD9D6F;
+             transition:transition 1.5s;
+            }
+
+          h1, h2, h3{
+             display:inline;
+            }
+
+          .slideshow-content{
+             position:relative;
+             width:100%;
+             height:500px;
+             z-index:2;
+             object-fit:cover;
+            }
+
+          /* Fading animation */
+          .fade {
+             -webkit-animation-name: fade;
+             -webkit-animation-duration: 1s;
+             animation-name: fade;
+             animation-duration: 1s;
+            }
+
+          @-webkit-keyframes fade {
+             from {opacity:0.4} 
+             to {opacity: 1}
+            }
+
+
+          @keyframes fade {
+             from {opacity:0.4} 
+             to {opacity: 1}
+            }
+
+          .container {
+             position:relative;
+             overflow:hidden;
+             z-index:3; 
+            }
+  
+          .img {
+             border: 1px solid #ddd;
+             border-radius: 4px;
+             padding: 4px;
+             width: 400px;
+             height:200px;
+             transition:transition 0.05s;
+             cursor:pointer;
+             z-index:2;
+            }
+
+
+          .h4 {
+				position:relative;
+				bottom:8px;
+				text-align:left;
+				font-size: 20px;
+				font-family: Courier New;
+				font-weight:bold;
+				transition:transition 5.0s;
+				padding-top:10px;
+				padding-bottom:6px;
+  
+			}
+		  .img:hover {
+				box-shadow: 0 0 2px 1px rgba(14,140,180,0.5);
+				-ms-transform:scale(1.05);
+				-webkit-transform:scale(1.05);
+			}
+			
+		  .models5{
+				border-radius: 3px;
+				cursor: pointer;
+				transition: 0.3s;
+				margin-right:10px;
+			}
+
+		  .modal{
+				display: none;
+				position: fixed;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				z-index: 2;
+				padding-top: 65px;
+				padding-bottom:5px;
+				left:40%;
+				top:0;
+				width: 60%;
+				height:90%;
+				overflow:scroll;
+  				background-color:rgb(186,140,99);	
+			}
+
+		  .img-content{
+				margin: auto;
+				position:relative;
+				display: block;
+				width: 100%;
+				max-width: 700px;
+				z-index:3;
+			}  
+
+		  .description {
+				margin: auto;
+				position:relative;
+				display: block;
+				width: 96%;
+				font-size:25px;
+				text-align: left;
+				color: #fff;
+				padding: 10px 0;
+				height: 150px;
+				z-index:3;
+				overflow:visible;
+			} 
+
+		  .music{
+				background-color:#F5F5F5;
+				zoom:100%;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				line-height:1.7;
+				padding:7px;
+				padding-bottom:4px;
+				position:absolute;
+				top:210%;
+				left:30%;
+				overflow:auto;
+				z-index:1;
+			}
+
+			  .vl{
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				zoom:100%;
+				position:absolute;
+				float:left;
+				border-left:4px solid #4e4e4c;
+				height:1250px;
+				top:105%;
+				left:28.5%;
+				overflow:auto;
+				z-index:1;
+			} 
+			
+		  .boxshadow{
+				background-color:#F5F5F5;
+				zoom:100%;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				position:absolute;
+				line-height:1.7;
+				top:105%;
+				left:30%;
+				padding:7px;
+				overflow:auto;
+				z-index:1;
+			}
+ 
+ 
+		  .flipimg{
+				position:absolute;
+				display:inline-block;
+				top:166%;
+				left:30%;
+				padding-left:17px;
+				overflow:auto;
+				z-index:0;
+		    } 
+
+		  /*  small Animation  for image and description   */ 
+		  img, #description {  
+				-webkit-animation-name: zoom;
+				-webkit-animation-duration: 0.6s;
+				animation-name: zoom;
+				animation-duration: 0.7s;
+			}
+			
+		  @-webkit-keyframes zoom {
+				from {-webkit-transform:scale(0)} 
+				to {-webkit-transform:scale(1)}
+			}
+
+		  @keyframes zoom {
+				from {transform:scale(0)} 
+				to {transform:scale(1)}
+			}
+
+		  .close{
+				position: fixed;
+				top: 2%;
+				right: 35px;
+				color: #fff;
+				font-size: 35px;
+				transition: 0.3s;
+			}
+		  .close:hover,
+				.close:focus {
+				color: #ff7f7f;
+				cursor:pointer;
+			}
+
+		  .logo-image{
+				left:9%;
+				width: 90px;
+				height: 87px;
+				margin-top: -6px;
+				float:left;
+			}
+
+		  footer{
+				position: absolute;
+				display:inline;
+				text-align:center;
+				color:white;
+				padding:30px;
+				font-size:12px;
+				background-color: #413C69;
+				float: left;  
+				height:200px;
+				width:100%;
+				z-index:3;
+				overflow:auto;
+				top:300%;
+				
+			}
+			
+		  
+		  a:link { font-family: verdana; font-size: 20px; color: yellow; }
+		  a:visited { font-family: verdana; font-size: 20px; color: white; }
+		  a:hover { font-family: verdana; font-size: 20px; color: SlateBlue; background-color: white; }
+		  a:active { font-family: verdana; font-size: 20px; color: LightGray; }
+
+		  #myBtn {
+				display: none;
+				position: fixed;
+				bottom: 20px;
+				right: 30px;
+				z-index: 99;
+				font-size: 18px;
+				border: none;
+				outline: none;
+				background-color: #1EAE98;
+				color: white;
+				cursor: pointer;
+				padding: 15px;
+				border-radius: 4px;
+			}
+
+		  #myBtn:hover {
+				background-color: #555;
+			}
+
+		  @media only screen and (max-width: 700px){
+			  .img-content {
+				 width: 100%;
+				}
+			}
+			
+		  @media screen and (max-width:600px) {
+			  .boxshadow {
+				  width: 100%;
+				}
+			}
+		  @media screen and (max-width:600px) {
+			  .boxshadow {
+				 width: 100%;
+				}
+			}
+
+		</style>
+		</head>
+		<body>
+			<div class="topnav">
+				<div class="logo-image">
+					<img src="LOGO.jpg" alt="LOGO" style="width:90px; height:87px;" >
+				</div>
+				<a href="rividi/MainPage.html">Home</a>
+				<a href="rividi/QueryForms.html">Query</a>
+				<a href="tharusha/products.html">Products</a>
+				<a href="daniel/QUIZ.html">Quiz</a>
+				<a class="active" href="thumbnail1.html">Thumbnails</a>
+				<a href="extra/Extra_Content.html">Modern Instruments</a>
+			</div>
+			<br>
+
+			<div class="dropdown">
+				<label for="bcolor">Pick A Background Color</label>
+				<select name="colors" id="bcolor" onchange="changeColor(this)">
+					<option value="white">white</option>
+					<option value="#FA5882">Red</option>
+					<option value="#F7D358">orange</option>
+					<option value="blue">Blue</option>
+					<option value="yellow">Yellow</option>
+					<option value="green">Green</option>
+					<option value="#80ced6">light blue</option>
+					<option value="#F2F5A9">light yellow</option>
+					<option value="#9AEE0B">light green</option>
+					<option value="#F5D0A9">pearl</option>
+				</select>
+			</div>
+			
+			<div class="dropdown" style="padding-left:15px;">
+				<label for="tcolor">Pick A Text Color</label>
+				<Select name="colors1" id="tcolor"  onchange="changecolor(this)">
+					<option value="black">black</option>
+					<option value="red">Red</option>
+					<option value="blue">Blue</option>
+					<option value="yellow">Yellow</option>
+					<option value="green">Green</option>
+					<option value="#80ced6">light blue</option>
+					<option value="purple">Purple</option>
+				</select>
+			</div>
+			<hr/>
+			<br><br>
+			<section>
+
+				<div class="slideshow-content">
+					<div class="mySlides fade">
+						<img src="frontguitar1.jpeg" alt="Guitar" style="width:100%; height:500px; object-fit:cover;">
+					</div>
+				
+					<div class="mySlides fade">
+						<img src="frontpiano.jpg" alt="Piano" style="width:100%; height:500px; object-fit:cover;">
+					</div>
+
+					<div class="mySlides fade">
+						<img src="frontviolin.jpg" alt="Violin" style="width:100%; height:500px; object-fit:cover;">
+					</div>
+
+					<div class="mySlides fade">
+						<img src="frontdrumkit.jpg" alt="DrumKit" style="width:100%; height:500px; object-fit:cover;">
+					</div>
+
+					<div class="mySlides fade">
+						<img src="frontxylophone.jpg" alt="Xylophone" style="width:100%; height:500px; object-fit:cover;">
+					</div>
+					
+					<div><h1 class="h1">  Love It,  </h1><h2 class="h2"> Buy It, </h2><h3 class="h3">  Thumb It.  </h3></div>
+				</div>
+				<br><br>
+
+				<div id="eventlistener">
+					<div class="container">
+						<img id="myimg" class="img" src="guitar1.jpg" alt="guitar" style="width:400px; height:200px;" >
+						<div class="h4">Guitar</div>
+					</div>
+					
+					<div class="container">
+						<img id="mypiano" class="img" src="piano.jpg" alt="piano" style="width:400px; height:200px;" >
+						<div class="h4">Piano</div>
+					</div>
+					
+					<div class="container">
+						<img id="myviolin" class="img" src="violin1.jpg" alt="violin" style="width:400px; height:200px;" >
+						<div class="h4">violin</div>
+					</div>
+					
+					<div class="container">
+						<img id="mydrum" class="img" src="drum.jpeg" alt="drum" style="width:400px; height:200px;" >
+						<div class="h4">Drum</div>
+					</div>
+
+					<div class="container">
+						<img id="myxylophone" class="img" src="xylophone.jpg" alt="xylophone" style="width:400px; height:200px; " >
+						<div class="h4">Xylophone</div>
+					</div>
+				</div>
+				<br><br>
+
+				<div id="guitar" class="modal">
+					<span class="close">&times;</span>
+					<div class="model1">
+						<img id="imgguitar" class="img-content" src="guitar1.jpg" alt="guitar" style="width:100%">
+					</div>
+					<div class="description" id="guitarintro">
+						<p>	The guitar is a fretted musical instrument that typically has six strings. 
+							It is held flat against the player's body and played by strumming or plucking the strings with the dominant hand,
+							while simultaneously pressing selected strings against frets with the fingers of the opposite hand. 
+							A plectrum or individual finger picks may also be used to strike the strings. 
+							The sound of the guitar is projected either acoustically, by means of a resonant chamber on the instrument, 
+							or amplified by an electronic pickup and an amplifier.
+							The guitar is classified as a chordophone – meaning the sound is produced by a vibrating string stretched between two fixed points. 
+							Historically, a guitar was constructed from wood with its strings made of catgut. 
+							Steel guitar strings were introduced near the end of the nineteenth century in the United States;
+							nylon strings came in the 1940s.[1] The guitar's ancestors include the gittern, the vihuela, 
+							the four-course Renaissance guitar, and the five-course baroque guitar, 
+							all of which contributed to the development of the modern six-string instrument.
+							<br>
+						</p>
+					</div>
+				</div>
+
+				
+				<div id="piano" class="modal" >
+					<span class="close">&times;</span>
+					<div class="5models">
+						<img id="imgpiano" class="img-content" src="piano.jpg" alt="piano" style="width:100%">
+					</div>
+					<div class="description" id="pianointro">
+						<p>
+							The piano is an acoustic, keyboard, stringed percussion instrument in which the strings are 
+							struck by wooden hammers that are coated with a softer material (modern hammers are covered with dense wool felt; 
+							some early pianos used leather). It is played using a keyboard, which is a row of keys (small levers) that the performer 
+							presses down or strikes with the fingers and thumbs of both hands to cause the hammers to strike the strings. 
+							It was invented in Italy by Bartolomeo Cristofori around the year 1700.
+							<br><br>
+						</p>
+					</div>
+				</div>
+
+ 
+				<div id="violin" class="modal" >
+					<span class="close">&times;</span>
+					<div class="5models">
+						<img id="imgviolin" class="img-content" src="violin1.jpg" alt="violin" style="width:100%">
+					</div>
+					<div class="description" id="violinintro">
+						<p>
+							The violin, sometimes known as a fiddle, is a wooden chordophone (string instrument) in the violin family. 
+							Most violins have a hollow wooden body. It is the smallest and thus highest-pitched instrument (soprano) 
+							in the family in regular use.[a] The violin typically has four strings, (some can have five), 
+							usually tuned in perfect fifths with notes G3, D4, A4, E5, and is most commonly played by drawing a bow across its strings. 
+							It can also be played by plucking the strings with the fingers (pizzicato) and, in specialized cases, 
+							by striking the strings with the wooden side of the bow (col legno)
+							<br><br>
+						</p>
+					</div>
+				</div> 
+
+				
+				<div id="drum" class="modal" >
+					<span class="close">&times;</span>
+					<div class="5models">
+						<img id="imgdrum" class="img-content" src="drum.jpg" alt="drum" style="width:100%">
+					</div>
+					<div class="description" id="drumintro">
+						<p>
+							A drum kit – also called a drum set, trap set (an abbreviation of the word "contraption") 
+							or simply drums – is a collection of drums, cymbals and other percussion instruments, 
+							which are set up on stands to be played by a single player,
+							with drumsticks held in both hands and the feet operating pedals that control the hi-hat cymbal and the beater for the bass drum. 
+							A drum kit consists of a mix of drums (categorized classically as membranophones, Hornbostel-Sachs high-level classification 2) 
+							and idiophones most significantly cymbals, but can also include the woodblock and cowbell 
+							(classified as Hornbostel-Sachs high-level classification 1). In the 2020s, 
+							some kits also include electronic instruments (Hornbostel-Sachs classification 53). 
+							Also, both hybrid (mixing acoustic instruments and electronic drums) and entirely electronic kits are used.
+							A standard modern kit (for a right-handed player), as used in popular music and taught in music schools,<br>
+							contains:
+						</p>
+						<ul>
+							<li>A snare drum, mounted on a stand, placed between the player's knees and played with drum sticks (which may include rutes or brushes).</li>
+							<li>A bass drum, played by a pedal operated by the right foot, which moves a felt-covered beater.</li>
+							<li>Two or more toms, played with sticks or brushes.</li>
+							<li>A hi-hat (two cymbals mounted on a stand), played with the sticks, opened and closed with left foot pedal (it can also produce sound with the foot alone).</li>
+							<li>One or more cymbals, mounted on stands, played with the sticks.</li>
+						</ul>
+						
+					</div>
+				</div>
+				<br>
+				
+			<div id="xylophone" class="modal" >
+				<span class="close">&times;</span>
+				<div class="5models">
+					<img id="imgxylophone" class="img-content" src="xylophone.jpg" alt="xylophone" style="width:100%">
+				</div>
+				
+				<div class="description" id="xylophoneintro">
+					<p>
+						The xylophone is a musical instrument in the percussion family that consists of wooden bars struck by mallets. 
+						Like the glockenspiel, the xylophone essentially consists of a set of tuned keys arranged in the fashion of the keyboard of a piano. 
+						Each bar is an idiophone tuned to a pitch of a musical scale, 
+						whether pentatonic or heptatonic in the case of many African and Asian instruments, diatonic in many western children's instruments, 
+						or chromatic for orchestral use.
+						The term xylophone may be used generally, to include all such instruments such as the marimba, 
+						balafon and even the semantron. However, in the orchestra, the term xylophone refers specifically to a chromatic instrument of somewhat 
+						higher pitch range and drier timbre than the marimba, and these two instruments should not be confused. A person who plays the xylophone 
+						is known as a xylophonist or simply a xylophone player.The term is also popularly used to refer to similar instruments of the lithophone 
+						and metallophone types. For example, the Pixiphone and many similar toys described by the makers as xylophones have bars of metal rather than of wood, 
+						and so are in organology regarded as glockenspiels rather than as xylophones.
+						<br><br>
+					</p>
+				</div>
+			</div>
+			
+			<div class="vl"></div>
+			<div class="boxshadow">
+					<h1 class="h1">
+						Music
+					</h1>
+					is the art of arranging sounds in time through the elements of melody, harmony, rhythm, and timbre. 
+					t is one of the universal cultural aspects of all human societies. 
+					General definitions of music include common elements such as pitch (which governs melody and harmony), 
+					rhythm (and its associated concepts tempo, meter, and articulation), dynamics (loudness and softness), 
+					and the sonic qualities of timbre and texture (which are sometimes termed the "color" of a musical sound). 
+					Different styles or types of music may emphasize, de-emphasize or omit some of these elements. 
+					Music is performed with a vast range of instruments and vocal techniques ranging from singing to rapping; 
+					there are solely instrumental pieces, solely vocal pieces (such as songs without instrumental accompaniment) 
+					and pieces that combine singing and instruments.
+					<br>
+					In its most general form, the activities describing music as an art form or cultural activity include the creation of 
+					works of music (songs, tunes, symphonies, and so on), the criticism of music, 
+					the study of the history of music, and the aesthetic examination of music. 
+					Ancient Greek and Indian philosophers defined music in two parts: melodies, as tones ordered horizontally, 
+					and harmonies as tones ordered vertically. Common sayings such as "the harmony of the spheres" and "it is music to my ears" 
+					point to the notion that music is often ordered and pleasant to listen to. However, 20th-century composer John Cage thought 
+					that any sound can be music, saying, for example, "There is no noise, only sound.".
+				<br><br>
+			</div>
+				
+			<div class="flipimg">
+				<img src="guitar.jpg" alt="guitar" style="width:200px; height:300px; object-fit:cover;">
+				<img src="piano1.jpeg" alt="piano" style="width:200px; height:300px; object-fit:cover; ">
+				<img src="tabla.jpg.jpg" alt="tabla" style="width:200px; height:300px; object-fit:cover; ">
+				<img src="violin2.jpg" alt="violin" style="width:200px; height:300px; object-fit:cover; ">
+				<img src="oud.jpg" alt="oud" style="width:200px; height:300px; object-fit:cover; ">
+			</div>
+
+
+			<div class="music">
+				<p>
+					The creation, performance, significance, and even the definition of music vary according to culture and social context. 
+					Indeed, throughout history, some new forms or styles of music have been criticized as "not being music", 
+					including Beethoven's Grosse Fuge string quartet in 1825, early jazz in the beginning of the 1900s 
+					and hardcore punk in the 1980s. There are many types of music, including popular music, traditional music, art music, 
+					music written for religious ceremonies, and work songs such as chanteys. Music ranges from strictly 
+					organized compositions—such as Classical music symphonies from the 1700s and 1800s—through to spontaneously played 
+					improvisational music such as jazz, and avant-garde styles of chance-based contemporary music from the 20th and 21st centuries.
+				</p>
+
+				<p>
+					Music can be divided into genres (e.g., country music) and genres can be further divided into subgenres 
+					(e.g., alternative country and country pop are two of the many country subgenres), although the dividing lines and relationships between 
+					music genres are often subtle, sometimes open to personal interpretation, and occasionally controversial. 
+					For example, it can be hard to draw the line between some early 1980s hard rock and heavy metal. Within the arts, music may be classified 
+					as a performing art, a fine art, or as an auditory art. Music may be played or sung and heard live at a 
+					rock concert or orchestra performance, heard live as part of a dramatic work (a music theater show or opera), 
+					or it may be recorded and listened to on a radio, MP3 player, CD player, smartphone or as film score or TV show.
+				</p>
+
+				<p>
+					In many cultures, music is an important part of people's way of life, as it plays a key role in religious rituals, 
+					rite of passage ceremonies (e.g., graduation and marriage), social activities (e.g., dancing) and cultural activities ranging from a
+					mateur karaoke singing to playing in an amateur funk band or singing in a community choir. People may make music as a hobby, 
+					like a teen playing cello in a youth orchestra, or work as a professional musician or singer. The music industry includes the 
+					individuals who create new songs and musical pieces (such as songwriters and composers), individuals who perform music 
+					(which include orchestra, jazz band and rock band musicians, singers and conductors), individuals who record music (music producers 
+					and sound engineers), individuals who organize concert tours, and individuals who sell recordings, sheet music, and scores to customers. 
+					Even once a song or piece has been performed, music critics, music journalists, and music scholars may assess and
+					evaluate the piece and its performance.
+				</p>
+			</div>
+			
+			<div>
+				<footer>
+					<a href="AboutUs.html">About Us</a>
+					<a href="ContactUs.html">Contact Us</a>
+					<a href="Page_Editor.html">Page Editor</a>
+					<a href="daniel/STUDENT_DETAILS.html">Student Details</a>
+					<a href="Site_Map.html">Site Map</a>
+				</footer>
+			</div>
+
+			</section>	
+			<button  onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+			<script>
+
+
+				var slideIndex = 0;
+				showSlides();
+
+				function showSlides() {
+				var i;
+				var slides = document.getElementsByClassName("mySlides");
+
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";  
+				}
+				slideIndex++;
+				if (slideIndex > slides.length) {slideIndex = 1}    
+
+				slides[slideIndex-1].style.display = "block";  
+				setTimeout(showSlides, 3500); // Change image every 3.5 seconds
+				}
+
+				let test = document.getElementById("eventlistener");
+
+				// This handler will be executed only once when the cursor
+				// moves over the h4 areas
+				test.addEventListener("mouseenter", function( event ) {
+					// highlight the mouseenter target
+					event.target.style.color = "rgb(76,4A,34)";
+
+					// reset the color after a short delay
+					setTimeout(function() {
+						event.target.style.color = "";
+					}, 1000);
+				}, false);
+
+				// This handler will be executed every time the cursor
+				// is moved over instrument names
+				test.addEventListener("mouseover", function( event ) {
+					// highlight the mouseover target
+					event.target.style.color = "#c19a6b";
+
+					// reset the color after a short delay
+					setTimeout(function() {
+					event.target.style.color = "";
+					}, 1000);
+				}, false);
+
+
+
+				// Get the modal guitar
+				var modalGuitar = document.getElementById("guitar");
+
+				// Get the image and insert it inside the modal - use its "guitarintro" text as a caption
+				var imgGuitar = document.getElementById("myimg");
+				var modalImg = document.getElementById("imgguitar");
+				var captionText = document.getElementById("guitarintro");
+				imgGuitar.onclick = function(){
+					modalGuitar.style.display = "block";
+					modalImg.src = this.src;
+					captionText.innerHTML = this.guitarintro.p;
+				}
+
+
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("close")[0];
+
+				// When the user clicks on <span> (x), close the modal
+				span.onclick = function() { 
+					modalGuitar.style.display = "none";
+				}
+
+				// Get the modal piano
+				var modalPiano = document.getElementById("piano");
+
+				// Get the image and insert it inside the modal - use its "pianointro" text as a caption
+				var imgPiano = document.getElementById("mypiano");
+				var modalImgPiano = document.getElementById("imgpiano");
+				var captionTextIntro = document.getElementById("pianointro");
+				imgPiano.onclick = function(){
+					modalPiano.style.display = "block";
+					modalImgPiano.src = this.src;
+					captionTextIntro.innerHTML = this.pianointro.p;
+				}
+				// Get the <span> element that closes the modal
+				var span1 = document.getElementsByClassName("close")[1];
+
+				// When the user clicks on <span> (x), close the modal
+				span1.onclick = function() { 
+					modalPiano.style.display = "none";
+				}
+
+				// Get the modal violin
+				var modalViolin = document.getElementById("violin");
+
+				// Get the image and insert it inside the modal - use its "guitarintro" text as a caption
+				var imgViolin = document.getElementById("myviolin");
+				var modalImgViolin = document.getElementById("imgviolin");
+				var captionTextViolin = document.getElementById("violinintro");
+				imgViolin.onclick = function(){
+					modalViolin.style.display = "block";
+					modalImgViolin.src = this.src;
+					captionTextViolin.innerHTML = this.violinintro.p;
+				}
+
+
+				// Get the <span> element that closes the modal
+				var span2 = document.getElementsByClassName("close")[2];
+
+				// When the user clicks on <span> (x), close the modal
+				span2.onclick = function() { 
+					modalViolin.style.display = "none";
+				}
+
+				// Get the modal drum 
+				var modalDrum = document.getElementById("drum");
+
+				// Get the image and insert it inside the modal - use its "guitarintro" text as a caption
+				var imgDrum = document.getElementById("mydrum");
+				var modalImgDrum = document.getElementById("imgdrum");
+				var captionTextDrum = document.getElementById("drumintro");
+				imgDrum.onclick = function(){
+					modalDrum.style.display = "block";
+					modalImgDrum.src = this.src;
+					captionTextDrum.innerHTML = this.drumintro.p;
+				}
+
+
+				// Get the <span> element that closes the modal
+				var span4 = document.getElementsByClassName("close")[3];
+
+				// When the user clicks on <span> (x), close the modal
+				span4.onclick = function() { 
+					modalDrum.style.display = "none";
+				}
+
+				// Get the modal xylophone
+				var modalXylophone = document.getElementById("xylophone");
+
+				// Get the image and insert it inside the modal - use its "guitarintro" text as a caption
+				var imgXylophone = document.getElementById("myxylophone");
+				var modalImgXylophone = document.getElementById("imgxylophone");
+				var captionTextXylophone = document.getElementById("xylophoneintro");
+				imgXylophone.onclick = function(){
+					modalXylophone.style.display = "block";
+					modalImgXylophone.src = this.src;
+					captionTextXylophone.innerHTML = this.xylophoneintro.p;
+				}
+
+
+				// Get the <span> element that closes the modal
+				var span5 = document.getElementsByClassName("close")[4];
+
+				// When the user clicks on <span> (x), close the modal
+				span5.onclick = function() { 
+					modalXylophone.style.display = "none";
+				}
+
+
+
+				function changeColor(event) {
+					var color = event.value;
+					document.getElementsByTagName('BODY')[0].style.backgroundColor=color;
+				}
+
+				function changecolor(event) {
+					var color1 = event.value;
+					document.getElementsByTagName('BODY')[0].style.color = color1;
+				}
+
+				//Get the button
+				var mybutton = document.getElementById("myBtn");
+
+				// When the user scrolls down 20px from the top of the document, show the button
+				window.onscroll = function() {scrollFunction()};
+
+				function scrollFunction() {
+					if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+					mybutton.style.display = "block";
+				} else {
+					mybutton.style.display = "none";
+				}
+				}
+
+				// When the user clicks on the button, scroll to the top of the document
+				function topFunction() {
+					document.body.scrollTop = 0;
+					document.documentElement.scrollTop = 0;
+				}
+
+
+
+			</script>
+		</body>
+	</html>
